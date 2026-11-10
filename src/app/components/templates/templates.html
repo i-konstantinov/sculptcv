@@ -1,0 +1,47 @@
+<div class="templates flex flex-1 flex-col items-center gap-10 px-6 py-12">
+  <header class="flex max-w-2xl flex-col items-center gap-4 text-center">
+    <h1 class="templates__title">Pick your template</h1>
+    <p class="templates__lead">Choose a starting point. You can fine-tune everything later.</p>
+  </header>
+
+  <ul class="grid w-full max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    @for (template of templates; track template.id) {
+      <li>
+        <p-card class="template-card" tabindex="0">
+          <ng-template #header>
+            <div class="template-card__thumb relative aspect-[3/4] overflow-hidden">
+              <img
+                class="h-full w-full object-cover object-top"
+                [src]="template.thumbnail"
+                [alt]="template.name + ' template preview'"
+                loading="lazy"
+              />
+
+              <div class="template-card__overlay absolute inset-0 flex flex-col justify-end gap-3 p-5">
+                <p class="template-card__description">{{ template.description }}</p>
+                <div class="flex flex-wrap gap-2">
+                  @for (tag of template.tags; track tag) {
+                    <p-tag [value]="tag" [rounded]="true" severity="secondary" />
+                  }
+                </div>
+              </div>
+            </div>
+          </ng-template>
+
+          <ng-template #title>
+            <div class="flex items-center justify-between gap-2">
+              <span>{{ template.name }}</span>
+              @if (template.isPremium) {
+                <p-tag value="Premium" icon="pi pi-star-fill" [rounded]="true" />
+              }
+            </div>
+          </ng-template>
+
+          <ng-template #subtitle>
+            <span class="template-card__category">{{ template.category }}</span>
+          </ng-template>
+        </p-card>
+      </li>
+    }
+  </ul>
+</div>

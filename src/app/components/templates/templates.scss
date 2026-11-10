@@ -1,0 +1,102 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.templates {
+  background:
+    radial-gradient(60rem 30rem at 50% -10%, color-mix(in srgb, var(--p-primary-color) 18%, transparent), transparent),
+    var(--p-content-background);
+  color: var(--p-text-color);
+}
+
+.templates__title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--p-text-color), var(--p-primary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.templates__lead {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--p-text-muted-color);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.template-card {
+  // Accent-colored caption (title/subtitle area) via PrimeNG card tokens.
+  --p-card-background: var(--p-primary-color);
+  --p-card-color: var(--p-primary-contrast-color);
+  --p-card-subtitle-color: color-mix(in srgb, var(--p-primary-contrast-color) 80%, transparent);
+
+  display: block;
+  height: 100%;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.template-card__thumb img {
+  transition: transform 0.4s ease;
+}
+
+.template-card__overlay {
+  opacity: 0;
+  background: linear-gradient(to top, color-mix(in srgb, var(--p-content-background) 96%, transparent) 25%, transparent);
+  transform: translateY(0.5rem);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.template-card:hover,
+.template-card:focus-visible,
+.template-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--p-primary-color) 25%, transparent);
+
+  .template-card__thumb img {
+    transform: scale(1.03);
+  }
+
+  .template-card__overlay {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.template-card__description {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--p-text-color);
+}
+
+.template-card__category {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .template-card,
+  .template-card__thumb img,
+  .template-card__overlay {
+    transition: none;
+  }
+}
