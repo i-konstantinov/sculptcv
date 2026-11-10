@@ -2,6 +2,12 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.3.
 
+## Styling convention
+
+- **PrimeNG** owns look and feel: components, colors, theming (Material preset), and icons (`pi pi-*`).
+- **Tailwind** is used for layout utilities only (flex, grid, gap, spacing, sizing, positioning) in templates. Colors, if needed, come only from PrimeNG tokens exposed by `tailwindcss-primeui` (e.g. `bg-surface-0`, `text-primary`), never from Tailwind's default palette.
+- Tailwind's preflight reset is intentionally not loaded. Layer order is `theme, base, primeng, components, utilities`.
+
 ## Development server
 
 To start a local development server, run:

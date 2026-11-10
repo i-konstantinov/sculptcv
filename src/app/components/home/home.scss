@@ -1,0 +1,30 @@
+.home {
+  background:
+    radial-gradient(60rem 30rem at 50% -10%, color-mix(in srgb, var(--p-primary-color) 18%, transparent), transparent),
+    var(--p-content-background);
+  color: var(--p-text-color);
+}
+
+.home__title {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--p-text-color), var(--p-primary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.home__lead {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--p-text-muted-color);
+}
+
+// Matches the logo's built-in dark background so it blends into the bar.
+.home__header {
+  background: #121417;
+}
