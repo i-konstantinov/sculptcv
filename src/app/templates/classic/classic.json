@@ -1,0 +1,510 @@
+{
+  "id": "classic",
+  "name": "Classic",
+  "description": "A timeless and traditional CV layout.",
+  "thumbnail": "assets/templates/example.png",
+  "category": "classic",
+  "version": 1,
+  "fonts": [
+    "Merriweather",
+    "Source Sans 3"
+  ],
+  "pages": [
+    {
+      "id": "page-1",
+      "width": 595,
+      "height": 842,
+      "background": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      },
+      "elements": [
+        {
+          "id": "full-name",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 48
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 40
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "personalInfo.fullName",
+            "fallback": "Your Name"
+          },
+          "typography": {
+            "fontFamily": "Merriweather",
+            "fontSize": 28,
+            "fontWeight": 700,
+            "color": "#1C1C1C",
+            "textAlign": "center",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "job-title",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 90
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 20
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "personalInfo.jobTitle",
+            "fallback": "Job Title"
+          },
+          "typography": {
+            "fontFamily": "Source Sans 3",
+            "fontSize": 12,
+            "fontWeight": 400,
+            "color": "#555555",
+            "letterSpacing": 2,
+            "textAlign": "center",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "contact-line",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 116
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 16
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "personalInfo.email",
+            "fallback": "email@example.com"
+          },
+          "typography": {
+            "fontFamily": "Source Sans 3",
+            "fontSize": 9,
+            "fontWeight": 400,
+            "color": "#555555",
+            "textAlign": "center",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "top-rule",
+          "type": "line",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 142
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 0
+            }
+          },
+          "zIndex": 1,
+          "stroke": "#1C1C1C",
+          "strokeWidth": 1.5
+        },
+        {
+          "id": "summary-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 158
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 18
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "static",
+            "fallback": "Profile"
+          },
+          "typography": {
+            "fontFamily": "Merriweather",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#1C1C1C",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 180
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 70
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "summary"
+          },
+          "typography": {
+            "fontFamily": "Source Sans 3",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#1C1C1C",
+            "lineHeight": 1.5,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "rule-1",
+          "type": "line",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 262
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 0
+            }
+          },
+          "zIndex": 1,
+          "stroke": "#BBBBBB",
+          "strokeWidth": 0.75
+        },
+        {
+          "id": "experience-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 276
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 18
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "static",
+            "fallback": "Professional Experience"
+          },
+          "typography": {
+            "fontFamily": "Merriweather",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#1C1C1C",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "experience",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 298
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 270
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "experience"
+          },
+          "typography": {
+            "fontFamily": "Source Sans 3",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#1C1C1C",
+            "lineHeight": 1.5,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "shrink",
+            "padding": 0
+          }
+        },
+        {
+          "id": "rule-2",
+          "type": "line",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 580
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 0
+            }
+          },
+          "zIndex": 1,
+          "stroke": "#BBBBBB",
+          "strokeWidth": 0.75
+        },
+        {
+          "id": "education-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 594
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 18
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "static",
+            "fallback": "Education"
+          },
+          "typography": {
+            "fontFamily": "Merriweather",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#1C1C1C",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "education",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 616
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 100
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "education"
+          },
+          "typography": {
+            "fontFamily": "Source Sans 3",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#1C1C1C",
+            "lineHeight": 1.5,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "shrink",
+            "padding": 0
+          }
+        },
+        {
+          "id": "rule-3",
+          "type": "line",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 726
+            },
+            "dimensions": {
+              "width": 483,
+              "height": 0
+            }
+          },
+          "zIndex": 1,
+          "stroke": "#BBBBBB",
+          "strokeWidth": 0.75
+        },
+        {
+          "id": "skills-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 740
+            },
+            "dimensions": {
+              "width": 231.5,
+              "height": 18
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "static",
+            "fallback": "Skills"
+          },
+          "typography": {
+            "fontFamily": "Merriweather",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#1C1C1C",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "skills",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 56,
+              "y": 762
+            },
+            "dimensions": {
+              "width": 231.5,
+              "height": 50
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "skills"
+          },
+          "typography": {
+            "fontFamily": "Source Sans 3",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#1C1C1C",
+            "lineHeight": 1.4,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "languages-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 307.5,
+              "y": 740
+            },
+            "dimensions": {
+              "width": 231.5,
+              "height": 18
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "static",
+            "fallback": "Languages"
+          },
+          "typography": {
+            "fontFamily": "Merriweather",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#1C1C1C",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "languages",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 307.5,
+              "y": 762
+            },
+            "dimensions": {
+              "width": 231.5,
+              "height": 50
+            }
+          },
+          "zIndex": 1,
+          "content": {
+            "source": "languages"
+          },
+          "typography": {
+            "fontFamily": "Source Sans 3",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#1C1C1C",
+            "lineHeight": 1.4,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        }
+      ]
+    }
+  ]
+}

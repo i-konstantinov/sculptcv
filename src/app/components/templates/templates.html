@@ -7,7 +7,15 @@
   <ul class="grid w-full max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
     @for (template of templates; track template.id) {
       <li>
-        <p-card class="template-card" tabindex="0">
+        <p-card
+          class="template-card"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Use the ' + template.name + ' template'"
+          (click)="select(template.id)"
+          (keydown.enter)="select(template.id)"
+          (keydown.space)="$event.preventDefault(); select(template.id)"
+        >
           <ng-template #header>
             <div class="template-card__thumb relative aspect-[3/4] overflow-hidden">
               <img

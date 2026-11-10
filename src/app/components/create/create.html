@@ -1,0 +1,99 @@
+<div class="create flex flex-1 flex-col items-center gap-10 px-6 py-12">
+  <header class="flex max-w-2xl flex-col items-center gap-4 text-center">
+    <h1 class="create__title">{{ template()?.name ?? 'Create your CV' }}</h1>
+    <p class="create__lead">
+      @if (template(); as t) {
+        {{ t.description }}
+      } @else {
+        Template data preview
+      }
+    </p>
+  </header>
+
+  <section class="create__panel flex w-full max-w-5xl flex-col gap-8 p-6">
+    @if (template(); as t) {
+      <dl class="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="flex flex-col gap-1">
+          <dt class="create__label">Id</dt>
+          <dd>{{ t.id }}</dd>
+        </div>
+        <div class="flex flex-col gap-1">
+          <dt class="create__label">Category</dt>
+          <dd class="capitalize">{{ t.category }}</dd>
+        </div>
+        <div class="flex flex-col gap-1">
+          <dt class="create__label">Version</dt>
+          <dd>{{ t.version }}</dd>
+        </div>
+        <div class="flex flex-col gap-1">
+          <dt class="create__label">Thumbnail</dt>
+          <dd class="break-all">{{ t.thumbnail }}</dd>
+        </div>
+        <div class="flex flex-col gap-1 sm:col-span-2">
+          <dt class="create__label">Fonts</dt>
+          <dd class="flex flex-wrap gap-2">
+            @for (font of t.fonts; track font) {
+              <p-tag [value]="font" [rounded]="true" severity="secondary" />
+            }
+          </dd>
+        </div>
+      </dl>
+
+      @for (page of t.pages; track page.id; let i = $index) {
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 class="create__subtitle">Page {{ i + 1 }} <span class="create__muted">({{ page.id }})</span></h2>
+            <span class="create__muted">
+              {{ page.width }} × {{ page.height }} · background {{ describeFill(page.background) }} ·
+              {{ page.elements.length }} elements
+            </span>
+          </div>
+
+          <p-table [value]="page.elements" size="small" [stripedRows]="true" [scrollable]="true">
+            <ng-template #header>
+              <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Position</th>
+                <th>Size</th>
+                <th>z</th>
+                <th>Details</th>
+              </tr>
+            </ng-template>
+            <ng-template #body let-element>
+              <tr>
+                <td class="whitespace-nowrap">{{ element.id }}</td>
+                <td><p-tag [value]="element.type" severity="info" /></td>
+                <td class="whitespace-nowrap">
+                  {{ element.geometry.position.x }}, {{ element.geometry.position.y }}
+                </td>
+                <td class="whitespace-nowrap">
+                  {{ element.geometry.dimensions.width }} × {{ element.geometry.dimensions.height }}
+                </td>
+                <td>{{ element.zIndex }}</td>
+                <td>{{ describeElement(element) }}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      }
+    } @else {
+      <div class="flex flex-col items-center gap-3 py-10 text-center">
+        <i class="pi pi-exclamation-circle create__empty-icon"></i>
+        @if (requestedId(); as id) {
+          <p>No template found with id <strong>{{ id }}</strong>.</p>
+        } @else {
+          <p>No template selected.</p>
+        }
+      </div>
+    }
+  </section>
+
+  <p-button
+    label="Back to templates"
+    icon="pi pi-arrow-left"
+    severity="secondary"
+    [rounded]="true"
+    routerLink="/templates"
+  />
+</div>

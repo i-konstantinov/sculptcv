@@ -7,7 +7,7 @@ export const TEMPLATE_CATALOG: CVTemplatePreview[] = [
     name: 'Modern Minimal',
     description: 'A clean and balanced layout with subtle accents.',
     category: 'modern',
-    thumbnail: 'assets/templates/modern-minimal.png',
+    thumbnail: 'assets/templates/example.png',
     isPremium: false,
     tags: ['Minimal', 'Two-column', 'Modern']
   },
@@ -16,7 +16,7 @@ export const TEMPLATE_CATALOG: CVTemplatePreview[] = [
     name: 'Executive',
     description: 'A sophisticated layout for experienced professionals.',
     category: 'professional',
-    thumbnail: 'assets/templates/executive.png',
+    thumbnail: 'assets/templates/example.png',
     isPremium: true,
     tags: ['Corporate', 'Sidebar', 'Professional']
   },
@@ -25,7 +25,7 @@ export const TEMPLATE_CATALOG: CVTemplatePreview[] = [
     name: 'Creative',
     description: 'A distinctive design for creative professionals.',
     category: 'creative',
-    thumbnail: 'assets/templates/creative.png',
+    thumbnail: 'assets/templates/example.png',
     isPremium: false,
     tags: ['Creative', 'Colorful', 'Visual']
   },
@@ -34,7 +34,7 @@ export const TEMPLATE_CATALOG: CVTemplatePreview[] = [
     name: 'Classic',
     description: 'A timeless and traditional CV layout.',
     category: 'classic',
-    thumbnail: 'assets/templates/classic.png',
+    thumbnail: 'assets/templates/example.png',
     isPremium: false,
     tags: ['Traditional', 'Single-column', 'Elegant']
   },
@@ -43,7 +43,7 @@ export const TEMPLATE_CATALOG: CVTemplatePreview[] = [
     name: 'Developer',
     description: 'A technical CV focused on skills and experience.',
     category: 'professional',
-    thumbnail: 'assets/templates/developer.png',
+    thumbnail: 'assets/templates/exampler.png',
     isPremium: false,
     tags: ['IT', 'Technical', 'Skills']
   },
@@ -52,7 +52,7 @@ export const TEMPLATE_CATALOG: CVTemplatePreview[] = [
     name: 'Elegant',
     description: 'A refined layout with warm colors and typography.',
     category: 'modern',
-    thumbnail: 'assets/templates/elegant.png',
+    thumbnail: 'assets/templates/example.png',
     isPremium: true,
     tags: ['Elegant', 'Minimal', 'Typography']
   }

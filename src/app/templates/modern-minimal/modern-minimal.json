@@ -1,0 +1,616 @@
+{
+  "id": "modern-minimal",
+  "name": "Modern Minimal",
+  "description": "A clean and balanced layout with subtle accents.",
+  "thumbnail": "assets/templates/example.png",
+  "category": "modern",
+  "version": 1,
+  "fonts": [
+    "Inter"
+  ],
+  "pages": [
+    {
+      "id": "page-1",
+      "width": 595,
+      "height": 842,
+      "background": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      },
+      "elements": [
+        {
+          "id": "sidebar",
+          "type": "rectangle",
+          "geometry": {
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "dimensions": {
+              "width": 200,
+              "height": 842
+            }
+          },
+          "zIndex": 0,
+          "fill": {
+            "type": "solid",
+            "color": "#F1F3F8"
+          }
+        },
+        {
+          "id": "accent-bar",
+          "type": "rectangle",
+          "geometry": {
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "dimensions": {
+              "width": 595,
+              "height": 6
+            }
+          },
+          "zIndex": 1,
+          "fill": {
+            "type": "solid",
+            "color": "#3B5BFD"
+          }
+        },
+        {
+          "id": "profile-image",
+          "type": "image",
+          "geometry": {
+            "position": {
+              "x": 40,
+              "y": 40
+            },
+            "dimensions": {
+              "width": 120,
+              "height": 120
+            }
+          },
+          "zIndex": 2,
+          "src": "personalInfo.profileImage",
+          "fit": "cover",
+          "borderRadius": 60
+        },
+        {
+          "id": "full-name",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 44
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 40
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "personalInfo.fullName",
+            "fallback": "Your Name"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 26,
+            "fontWeight": 700,
+            "color": "#121417",
+            "letterSpacing": -0.5,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "job-title",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 86
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 22
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "personalInfo.jobTitle",
+            "fallback": "Job Title"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 13,
+            "fontWeight": 500,
+            "color": "#3B5BFD",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "header-divider",
+          "type": "line",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 122
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 0
+            }
+          },
+          "zIndex": 2,
+          "stroke": "#E3E6EE",
+          "strokeWidth": 1
+        },
+        {
+          "id": "contact-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 184
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 18
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "static",
+            "fallback": "CONTACT"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 10,
+            "fontWeight": 700,
+            "color": "#121417",
+            "letterSpacing": 1.2,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "email",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 206
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 16
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "personalInfo.email",
+            "fallback": "email@example.com"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 9,
+            "fontWeight": 400,
+            "color": "#5B6270",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "phone",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 224
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 16
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "personalInfo.phone",
+            "fallback": "+1 555 000 000"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 9,
+            "fontWeight": 400,
+            "color": "#5B6270",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "location",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 242
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 16
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "personalInfo.location",
+            "fallback": "City, Country"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 9,
+            "fontWeight": 400,
+            "color": "#5B6270",
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "skills-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 286
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 18
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "static",
+            "fallback": "SKILLS"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 10,
+            "fontWeight": 700,
+            "color": "#121417",
+            "letterSpacing": 1.2,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "skills",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 308
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 200
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "skills"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 9,
+            "fontWeight": 400,
+            "color": "#5B6270",
+            "lineHeight": 1.6,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "languages-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 530
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 18
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "static",
+            "fallback": "LANGUAGES"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 10,
+            "fontWeight": 700,
+            "color": "#121417",
+            "letterSpacing": 1.2,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "languages",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 24,
+              "y": 552
+            },
+            "dimensions": {
+              "width": 152,
+              "height": 120
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "languages"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 9,
+            "fontWeight": 400,
+            "color": "#5B6270",
+            "lineHeight": 1.6,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "summary-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 140
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 18
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "static",
+            "fallback": "PROFILE"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 11,
+            "fontWeight": 700,
+            "color": "#3B5BFD",
+            "letterSpacing": 1.2,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 162
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 80
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "summary"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#121417",
+            "lineHeight": 1.5,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "experience-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 260
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 18
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "static",
+            "fallback": "EXPERIENCE"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 11,
+            "fontWeight": 700,
+            "color": "#3B5BFD",
+            "letterSpacing": 1.2,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "experience",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 282
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 330
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "experience"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#121417",
+            "lineHeight": 1.5,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "shrink",
+            "padding": 0
+          }
+        },
+        {
+          "id": "education-heading",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 630
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 18
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "static",
+            "fallback": "EDUCATION"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 11,
+            "fontWeight": 700,
+            "color": "#3B5BFD",
+            "letterSpacing": 1.2,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "hidden",
+            "padding": 0
+          }
+        },
+        {
+          "id": "education",
+          "type": "text",
+          "geometry": {
+            "position": {
+              "x": 224,
+              "y": 652
+            },
+            "dimensions": {
+              "width": 331,
+              "height": 150
+            }
+          },
+          "zIndex": 2,
+          "content": {
+            "source": "education"
+          },
+          "typography": {
+            "fontFamily": "Inter",
+            "fontSize": 10,
+            "fontWeight": 400,
+            "color": "#121417",
+            "lineHeight": 1.5,
+            "textAlign": "left",
+            "verticalAlign": "top"
+          },
+          "textBox": {
+            "autoFit": false,
+            "overflow": "shrink",
+            "padding": 0
+          }
+        }
+      ]
+    }
+  ]
+}

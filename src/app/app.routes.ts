@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeLayout } from './layouts/home-layout/home-layout';
 import { Home } from './components/home/home';
-import { Templates } from './components/templates/templates';
 
 export const routes: Routes = [
   {
@@ -14,7 +13,11 @@ export const routes: Routes = [
       },
       {
         path: 'templates',
-        component: Templates,
+        loadComponent: () => import('./components/templates/templates').then((m) => m.Templates),
+      },
+      {
+        path: 'create',
+        loadComponent: () => import('./components/create/create').then((m) => m.Create),
       },
     ],
   },
