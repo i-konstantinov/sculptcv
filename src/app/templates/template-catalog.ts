@@ -43,7 +43,7 @@ export const TEMPLATE_CATALOG: CVTemplatePreview[] = [
     name: 'Developer',
     description: 'A technical CV focused on skills and experience.',
     category: 'professional',
-    thumbnail: 'assets/templates/exampler.png',
+    thumbnail: 'assets/templates/example.png',
     isPremium: false,
     tags: ['IT', 'Technical', 'Skills']
   },
