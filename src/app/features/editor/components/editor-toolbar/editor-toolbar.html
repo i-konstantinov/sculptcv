@@ -1,0 +1,14 @@
+<div class="flex h-14 items-center justify-between gap-4 px-4">
+  <div class="flex min-w-0 items-center gap-4">
+    <p-button
+      label="Back to templates"
+      icon="pi pi-arrow-left"
+      severity="secondary"
+      [rounded]="true"
+      (onClick)="back.emit()"
+    />
+    <span class="editor-toolbar__title truncate">{{ title() }}</span>
+  </div>
+
+  <p-button label="Export" icon="pi pi-download" size="small" [disabled]="true" />
+</div>

@@ -1,22 +1,21 @@
 import { Component, DestroyRef, OnInit, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
-import { TagModule } from 'primeng/tag';
-import { CVElement } from '../../models/element.model';
-import { Fill } from '../../models/fill.model';
+import { Editor } from '../../features/editor/editor';
 import { CVTemplate } from '../../models/template.model';
 import { TemplateService } from '../../services/template.service';
 
+/** Route container: resolves the selected template from the URL and hands it to the editor. */
 @Component({
-  imports: [ButtonModule, RouterLink, TableModule, TagModule],
+  imports: [ButtonModule, Editor, RouterLink],
   selector: 'app-create',
   styleUrl: './create.scss',
   templateUrl: './create.html',
 })
 export class Create implements OnInit {
   private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
   private readonly templateService = inject(TemplateService);
 
@@ -37,28 +36,7 @@ export class Create implements OnInit {
     });
   }
 
-  protected describeFill(fill: Fill | undefined): string {
-    if (!fill) return '—';
-    if (fill.type === 'solid') return fill.color;
-    const stops = fill.stops.map((stop) => `${stop.color} ${stop.offset * 100}%`).join(', ');
-    return `${fill.type}${fill.angle !== undefined ? ` ${fill.angle}°` : ''}: ${stops}`;
-  }
-
-  protected describeElement(element: CVElement): string {
-    switch (element.type) {
-      case 'text': {
-        const { source, fallback } = element.content;
-        const { fontFamily, fontSize, fontWeight } = element.typography;
-        const label = source === 'static' ? `"${fallback}"` : `{${source}}`;
-        return `${label} · ${fontFamily} ${fontSize}px / ${fontWeight}`;
-      }
-      case 'image':
-        return `{${element.src}} · ${element.fit}`;
-      case 'line':
-        return `${element.stroke} · ${element.strokeWidth}px${element.dash ? ' dashed' : ''}`;
-      case 'rectangle':
-      case 'circle':
-        return this.describeFill(element.fill);
-    }
+  protected backToTemplates(): void {
+    void this.router.navigate(['/templates']);
   }
 }

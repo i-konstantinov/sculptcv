@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  flex: none;
+  border-bottom: 1px solid var(--p-content-border-color);
+  background: var(--p-content-background);
+}
+
+.editor-toolbar__title {
+  font-weight: 600;
+}

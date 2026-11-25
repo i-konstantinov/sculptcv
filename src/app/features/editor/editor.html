@@ -1,0 +1,42 @@
+<app-editor-toolbar [title]="template().name" (back)="back.emit()" />
+
+<div class="editor__body flex min-h-0 flex-1">
+  <app-editor-sidebar class="editor__panel editor__panel--left hidden w-64 shrink-0 lg:flex" />
+
+  <main class="editor__workspace relative flex min-w-0 flex-1 flex-col">
+    <div class="editor__scroller flex-1 overflow-auto">
+      <!-- m-auto centers the page when it fits and keeps it scrollable from the top-left when it doesn't. -->
+      <div class="flex min-h-full min-w-max p-10">
+        <app-editor-canvas class="m-auto" [zoom]="zoom()" />
+      </div>
+    </div>
+
+    <div class="editor__zoom absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1 px-2 py-1">
+      <p-button
+        icon="pi pi-minus"
+        [text]="true"
+        [rounded]="true"
+        size="small"
+        severity="secondary"
+        ariaLabel="Zoom out"
+        [disabled]="!canZoomOut()"
+        (onClick)="zoomOut()"
+      />
+      <button type="button" class="editor__zoom-value" (click)="resetZoom()" title="Reset to 100%">
+        {{ zoomPercent() }}%
+      </button>
+      <p-button
+        icon="pi pi-plus"
+        [text]="true"
+        [rounded]="true"
+        size="small"
+        severity="secondary"
+        ariaLabel="Zoom in"
+        [disabled]="!canZoomIn()"
+        (onClick)="zoomIn()"
+      />
+    </div>
+  </main>
+
+  <app-editor-properties class="editor__panel editor__panel--right hidden w-72 shrink-0 lg:flex" />
+</div>

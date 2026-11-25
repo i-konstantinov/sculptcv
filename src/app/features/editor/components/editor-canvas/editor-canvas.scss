@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  flex: none;
+}
+
+// Fabric wraps the <canvas> in its own container; this wrapper gives the page its paper look.
+.editor-canvas__page {
+  background: #ffffff;
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 0.12),
+    0 12px 32px rgb(0 0 0 / 0.18);
+}

@@ -1,0 +1,44 @@
+// Fill the viewport below the app header (HomeLayout's 5rem logo bar) so the
+// workspace scrolls internally instead of the whole page.
+:host {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 5rem);
+  color: var(--p-text-color);
+}
+
+.editor__panel {
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--p-content-background);
+}
+
+.editor__panel--left {
+  border-right: 1px solid var(--p-content-border-color);
+}
+
+.editor__panel--right {
+  border-left: 1px solid var(--p-content-border-color);
+}
+
+.editor__workspace {
+  background: color-mix(in srgb, var(--p-text-muted-color) 14%, var(--p-content-background));
+}
+
+.editor__zoom {
+  border: 1px solid var(--p-content-border-color);
+  border-radius: 999px;
+  background: var(--p-content-background);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.12);
+}
+
+.editor__zoom-value {
+  min-width: 3.5rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
